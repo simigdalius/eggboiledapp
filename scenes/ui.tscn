@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://vmkm22bl1gbr"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_33x7x"]
+[ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="2_tnino"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3u2f"]
+bg_color = Color(0.711228, 0.524177, 0.990413, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8obc2"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjmle"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_33x7x")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h3u2f")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 88.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8obc2")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_right = 86.0
+offset_bottom = 46.0
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("2_tnino")
+theme_override_font_sizes/font_size = 20
+text = "Egg boiled
+Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 104.0
+offset_right = 88.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_tnino")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjmle")
+text = "start boiling"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 139.0
+offset_right = 88.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("2_tnino")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pjmle")
+text = "exit"
+
+[connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
+[connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]

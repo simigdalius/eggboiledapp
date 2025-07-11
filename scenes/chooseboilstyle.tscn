@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://cimlbbg5jwano"]
+
+[ext_resource type="Script" path="res://scripts/chooseboilstyle.gd" id="1_0j8ln"]
+[ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_4fq2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1ysv"]
+bg_color = Color(0.711228, 0.524177, 0.990413, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nci26"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr73a"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[node name="chooseboilstyle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0j8ln")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1ysv")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 88.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Panel2" type="Panel" parent="Panel2"]
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 38.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Panel3" type="Panel" parent="Panel2"]
+offset_left = 6.0
+offset_top = 64.0
+offset_right = 38.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Panel4" type="Panel" parent="Panel2"]
+offset_left = 46.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Panel5" type="Panel" parent="Panel2"]
+offset_left = 46.0
+offset_top = 64.0
+offset_right = 78.0
+offset_bottom = 112.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -14.0
+offset_top = -9.0
+offset_right = 106.0
+offset_bottom = 26.0
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("1_4fq2h")
+theme_override_font_sizes/font_size = 13
+text = "Egg boiled  Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 141.0
+offset_right = 88.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("1_4fq2h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nr73a")
+text = "back"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 59.0
+offset_right = 35.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("1_4fq2h")
+text = "soft"
+
+[node name="Button" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = 14.0
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 59.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("1_4fq2h")
+theme_override_font_sizes/font_size = 0
+text = "mid"
+
+[node name="Button" type="Button" parent="Label3"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -35.0
+offset_right = 27.0
+offset_bottom = 15.0
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 115.0
+offset_right = 34.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_4fq2h")
+theme_override_font_sizes/font_size = 0
+text = "jam"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 115.0
+offset_right = 79.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_4fq2h")
+theme_override_font_sizes/font_size = 0
+text = "hard"
+
+[connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
+[connection signal="gui_input" from="Label2/Button" to="." method="_on_button_gui_input"]
+[connection signal="gui_input" from="Label3/Button" to="." method="_on_button2_gui_input"]

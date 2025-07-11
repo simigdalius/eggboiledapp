@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://c838aoetkmdxf"]
+
+[ext_resource type="Script" path="res://scenes/medium_boiled.gd" id="1_mvmxv"]
+[ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_yswft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioxn4"]
+bg_color = Color(0.711228, 0.524177, 0.990413, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tldkr"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4vir"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm4qv"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[node name="medium_boiled" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mvmxv")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 90.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ioxn4")
+
+[node name="Panel2" type="Panel" parent="Panel"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 88.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tldkr")
+
+[node name="Label" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 94.0
+offset_bottom = 33.0
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("1_yswft")
+theme_override_font_sizes/font_size = 20
+text = "medium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 117.0
+offset_right = 86.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("1_yswft")
+text = "08:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 139.0
+offset_right = 88.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("1_yswft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y4vir")
+text = "close"
+
+[node name="ready" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jm4qv")
+
+[node name="Label" type="Label" parent="ready"]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 86.0
+offset_bottom = 56.0
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("1_yswft")
+theme_override_font_sizes/font_size = 20
+text = "eggg ready"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
