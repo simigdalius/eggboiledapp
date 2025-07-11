@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cr1uo23obuprn"]
+[gd_scene load_steps=2 format=3 uid="uid://cr1uo23obuprn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y34k"]
+bg_color = Color(0.711228, 0.524177, 0.990413, 1)
+border_color = Color(1, 1, 1, 1)
 
 [node name="jammy_boiled" type="Control"]
 layout_mode = 3
@@ -7,3 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 90.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3y34k")
