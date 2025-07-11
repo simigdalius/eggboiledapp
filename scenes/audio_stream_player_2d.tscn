@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3m8nh2x3llax"]
+
+[ext_resource type="AudioStream" uid="uid://de36wrqqwiavn" path="res://soundeffects/calm-hiphop-lofi-338840.mp3" id="1_ivwe4"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ivwe4")
+autoplay = true

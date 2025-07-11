@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bedq73yt8ftnx"]
+[gd_scene load_steps=9 format=3 uid="uid://bedq73yt8ftnx"]
 
 [ext_resource type="Script" path="res://scripts/hard_boiled.gd" id="1_dccwx"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="1_qoeld"]
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="2_4s1mb"]
+[ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_hgwgk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3rrw"]
 texture = ExtResource("1_qoeld")
@@ -87,7 +88,7 @@ offset_right = 86.0
 offset_bottom = 140.0
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("2_4s1mb")
-text = "10:30"
+text = "10:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -103,6 +104,7 @@ offset_bottom = 116.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jbhen")
 
 [node name="Label2" type="Label" parent="ready"]
+layout_mode = 0
 offset_top = 56.0
 offset_right = 86.0
 offset_bottom = 83.0
@@ -113,6 +115,8 @@ theme_override_font_sizes/font_size = 20
 text = "eggcelent"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_hgwgk")]
 
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

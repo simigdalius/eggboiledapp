@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://co3xadjyew04l"]
+[gd_scene load_steps=10 format=3 uid="uid://co3xadjyew04l"]
 
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_p6bkp"]
 [ext_resource type="Script" path="res://scripts/soft_boiled.gd" id="1_qp1hn"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="2_2oumh"]
+[ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_2jhs7"]
+[ext_resource type="Texture2D" uid="uid://dujtrvs14m82r" path="res://artwok/1000000944.png" id="4_kvo0f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svgof"]
 texture = ExtResource("2_2oumh")
@@ -14,6 +16,9 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 shadow_size = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jbmq"]
+texture = ExtResource("4_kvo0f")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0poi"]
 bg_color = Color(0.709804, 0.52549, 0.992157, 1)
@@ -48,8 +53,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4w2jb")
 
 [node name="Label" type="Label" parent="Panel/Panel2"]
 layout_mode = 0
+offset_top = 3.0
 offset_right = 86.0
-offset_bottom = 27.0
+offset_bottom = 23.0
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("1_p6bkp")
@@ -69,7 +75,7 @@ offset_right = 86.0
 offset_bottom = 140.0
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_p6bkp")
-text = "06:00"
+text = "05:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -82,6 +88,7 @@ offset_bottom = 116.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4w2jb")
 
 [node name="Label2" type="Label" parent="ready"]
+layout_mode = 0
 offset_top = 56.0
 offset_right = 86.0
 offset_bottom = 83.0
@@ -93,6 +100,14 @@ text = "eggcelent"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="ready"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 70.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7jbmq")
+
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 2.0
@@ -103,6 +118,8 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_p6bkp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0poi")
 text = "close"
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_2jhs7")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
