@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr1uo23obuprn"]
+[gd_scene load_steps=8 format=3 uid="uid://cr1uo23obuprn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y34k"]
-bg_color = Color(0.711228, 0.524177, 0.990413, 1)
-border_color = Color(1, 1, 1, 1)
+[ext_resource type="Script" path="res://scripts/jammy_boiled.gd" id="1_mmcjd"]
+[ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="1_p2m21"]
+[ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="2_x4pu1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdbch"]
+texture = ExtResource("1_p2m21")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4b5o"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0s21"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tabcf"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
 
 [node name="jammy_boiled" type="Control"]
 layout_mode = 3
@@ -11,8 +38,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mmcjd")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 90.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3y34k")
+theme_override_styles/panel = SubResource("StyleBoxTexture_hdbch")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 88.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4b5o")
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 94.0
+offset_bottom = 33.0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("2_x4pu1")
+theme_override_font_sizes/font_size = 20
+text = "Jammy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 139.0
+offset_right = 88.0
+offset_bottom = 155.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_x4pu1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d0s21")
+text = "close"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 117.0
+offset_right = 86.0
+offset_bottom = 140.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_x4pu1")
+text = "09:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ready" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tabcf")
+
+[node name="Label2" type="Label" parent="ready"]
+offset_top = 56.0
+offset_right = 86.0
+offset_bottom = 83.0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 50
+theme_override_fonts/font = ExtResource("2_x4pu1")
+theme_override_font_sizes/font_size = 20
+text = "eggcelent"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

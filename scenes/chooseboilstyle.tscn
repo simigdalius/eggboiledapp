@@ -1,13 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cimlbbg5jwano"]
+[gd_scene load_steps=8 format=3 uid="uid://cimlbbg5jwano"]
 
 [ext_resource type="Script" path="res://scripts/chooseboilstyle.gd" id="1_0j8ln"]
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_4fq2h"]
+[ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="2_kxbic"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1ysv"]
-bg_color = Color(0.711228, 0.524177, 0.990413, 1)
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ug3yn"]
+texture = ExtResource("2_kxbic")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nci26"]
+bg_color = Color(0.709804, 0.52549, 0.992157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3p8a3"]
 bg_color = Color(0.709804, 0.52549, 0.992157, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -32,51 +40,50 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0j8ln")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_s1ysv")
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 17.0
-offset_right = 88.0
-offset_bottom = 137.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ug3yn")
 
 [node name="Panel2" type="Panel" parent="Panel2"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 8.0
-offset_right = 38.0
-offset_bottom = 56.0
+offset_left = 7.0
+offset_top = 25.0
+offset_right = 39.0
+offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
 
 [node name="Panel3" type="Panel" parent="Panel2"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 64.0
-offset_right = 38.0
-offset_bottom = 112.0
+offset_left = 7.0
+offset_top = 81.0
+offset_right = 39.0
+offset_bottom = 129.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
 
 [node name="Panel4" type="Panel" parent="Panel2"]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 8.0
-offset_right = 78.0
-offset_bottom = 56.0
+offset_left = 47.0
+offset_top = 25.0
+offset_right = 79.0
+offset_bottom = 73.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
 
 [node name="Panel5" type="Panel" parent="Panel2"]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 64.0
-offset_right = 78.0
-offset_bottom = 112.0
+offset_left = 47.0
+offset_top = 81.0
+offset_right = 79.0
+offset_bottom = 129.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_nci26")
+
+[node name="Panel" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 90.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3p8a3")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -84,6 +91,7 @@ offset_left = -14.0
 offset_top = -9.0
 offset_right = 106.0
 offset_bottom = 26.0
+theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("1_4fq2h")
 theme_override_font_sizes/font_size = 13
@@ -97,6 +105,7 @@ offset_left = 2.0
 offset_top = 141.0
 offset_right = 88.0
 offset_bottom = 157.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_4fq2h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_nr73a")
 text = "back"
@@ -129,9 +138,9 @@ text = "mid"
 
 [node name="Button" type="Button" parent="Label3"]
 layout_mode = 0
-offset_left = -5.0
+offset_left = -6.0
 offset_top = -35.0
-offset_right = 27.0
+offset_right = 26.0
 offset_bottom = 15.0
 
 [node name="Label4" type="Label" parent="."]
@@ -144,6 +153,13 @@ theme_override_fonts/font = ExtResource("1_4fq2h")
 theme_override_font_sizes/font_size = 0
 text = "jam"
 
+[node name="Button" type="Button" parent="Label4"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = 14.0
+
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0
 offset_left = 51.0
@@ -154,6 +170,15 @@ theme_override_fonts/font = ExtResource("1_4fq2h")
 theme_override_font_sizes/font_size = 0
 text = "hard"
 
+[node name="Button" type="Button" parent="Label5"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -35.0
+offset_right = 28.0
+offset_bottom = 14.0
+
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="gui_input" from="Label2/Button" to="." method="_on_button_gui_input"]
 [connection signal="gui_input" from="Label3/Button" to="." method="_on_button2_gui_input"]
+[connection signal="gui_input" from="Label4/Button" to="." method="_on_button65_gui_input"]
+[connection signal="gui_input" from="Label5/Button" to="." method="_on_buttonh_gui_input"]

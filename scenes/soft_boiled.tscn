@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://co3xadjyew04l"]
+[gd_scene load_steps=7 format=3 uid="uid://co3xadjyew04l"]
 
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_p6bkp"]
 [ext_resource type="Script" path="res://scripts/soft_boiled.gd" id="1_qp1hn"]
+[ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="2_2oumh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c5yu"]
-bg_color = Color(0.711228, 0.524177, 0.990413, 1)
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svgof"]
+texture = ExtResource("2_2oumh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w2jb"]
 bg_color = Color(0.709804, 0.52549, 0.992157, 1)
@@ -36,7 +36,7 @@ script = ExtResource("1_qp1hn")
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 160.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_0c5yu")
+theme_override_styles/panel = SubResource("StyleBoxTexture_svgof")
 
 [node name="Panel2" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -50,10 +50,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4w2jb")
 layout_mode = 0
 offset_right = 86.0
 offset_bottom = 27.0
+theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("1_p6bkp")
 theme_override_font_sizes/font_size = 20
-text = "soft"
+text = "Soft"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -66,6 +67,7 @@ offset_left = 6.0
 offset_top = 117.0
 offset_right = 86.0
 offset_bottom = 140.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_p6bkp")
 text = "06:00"
 horizontal_alignment = 1
@@ -79,15 +81,15 @@ offset_right = 88.0
 offset_bottom = 116.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4w2jb")
 
-[node name="Label" type="Label" parent="ready"]
-layout_mode = 0
-offset_top = 29.0
+[node name="Label2" type="Label" parent="ready"]
+offset_top = 56.0
 offset_right = 86.0
-offset_bottom = 56.0
+offset_bottom = 83.0
+theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/font = ExtResource("1_p6bkp")
 theme_override_font_sizes/font_size = 20
-text = "eggg ready"
+text = "eggcelent"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -97,6 +99,7 @@ offset_left = 2.0
 offset_top = 139.0
 offset_right = 88.0
 offset_bottom = 155.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("1_p6bkp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0poi")
 text = "close"
