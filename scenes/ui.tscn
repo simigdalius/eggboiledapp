@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://vmkm22bl1gbr"]
+[gd_scene load_steps=16 format=3 uid="uid://vmkm22bl1gbr"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_33x7x"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="2_cnit3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cdqduo681wtys" path="res://artwok/1000000943.png" id="5_6xv6k"]
 [ext_resource type="Texture2D" uid="uid://dj5kycxsrianv" path="res://artwok/1000000942.png" id="6_s3oij"]
 [ext_resource type="Texture2D" uid="uid://dujtrvs14m82r" path="res://artwok/1000000944.png" id="7_nxbpc"]
+[ext_resource type="Texture2D" uid="uid://dgkbsahrj6fg7" path="res://artwok/1000000947.png" id="8_ns21y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7oxuo"]
 texture = ExtResource("2_cnit3")
@@ -35,6 +36,9 @@ texture = ExtResource("6_s3oij")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oeehg"]
 texture = ExtResource("7_nxbpc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52v5q"]
+texture = ExtResource("8_ns21y")
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -98,27 +102,33 @@ text = "exit"
 
 [node name="Panel3" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 51.0
-offset_right = 44.0
-offset_bottom = 91.0
+offset_left = 21.0
+offset_top = 53.0
+offset_right = 61.0
+offset_bottom = 93.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_c8vdt")
 
 [node name="Panel4" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 52.0
-offset_right = 78.0
-offset_bottom = 92.0
+offset_left = 39.0
+offset_top = 48.0
+offset_right = 79.0
+offset_bottom = 88.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_jgohq")
 
 [node name="Panel5" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 23.0
+offset_left = 48.0
 offset_top = 66.0
-offset_right = 63.0
+offset_right = 88.0
 offset_bottom = 106.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oeehg")
+
+[node name="Panel6" type="Panel" parent="."]
+offset_top = 60.0
+offset_right = 42.0
+offset_bottom = 103.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_52v5q")
 
 [connection signal="gui_input" from="Button" to="." method="_on_button_gui_input"]
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]

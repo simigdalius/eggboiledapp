@@ -29,3 +29,7 @@ func _on_buttonh_gui_input(event: InputEvent) -> void:
 
 func _on_button65_gui_input(event: InputEvent) -> void:
 	get_tree().change_scene_to_file("res://scenes/jammy_boiled.tscn")
+
+
+func _on_button_85_gui_input(event: InputEvent) -> void:
+	get_tree().change_scene_to_file("res://scenes/soft_boiled.tscn")

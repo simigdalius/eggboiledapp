@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bedq73yt8ftnx"]
+[gd_scene load_steps=15 format=3 uid="uid://bedq73yt8ftnx"]
 
 [ext_resource type="Script" path="res://scripts/hard_boiled.gd" id="1_dccwx"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="1_qoeld"]
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="2_4s1mb"]
 [ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_hgwgk"]
+[ext_resource type="Texture2D" uid="uid://dgkbsahrj6fg7" path="res://artwok/1000000947.png" id="4_x5wui"]
+[ext_resource type="Texture2D" uid="uid://c0v4qruo3evsk" path="res://artwok/1000000945.png" id="6_doesc"]
+[ext_resource type="Texture2D" uid="uid://cwwhcr7dhuv34" path="res://artwok/1000000948.png" id="7_oct77"]
+[ext_resource type="Texture2D" uid="uid://nwxq6ac6e75i" path="res://artwok/1000000949.png" id="8_kbpoa"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3rrw"]
 texture = ExtResource("1_qoeld")
@@ -31,6 +35,32 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 shadow_size = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_haisv"]
+texture = ExtResource("4_x5wui")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64mp8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_doesc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oct77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kbpoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oct77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_doesc")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 5.0
+}]
 
 [node name="hard_boiled" type="Control"]
 layout_mode = 3
@@ -116,7 +146,22 @@ text = "eggcelent"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="ready"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 73.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_haisv")
+
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_hgwgk")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45.125, 80.25)
+scale = Vector2(0.0509033, 0.0437012)
+sprite_frames = SubResource("SpriteFrames_64mp8")
+animation = &"anim"
 
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

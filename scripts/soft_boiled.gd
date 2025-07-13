@@ -1,10 +1,12 @@
 extends Control
 
+
 var total_time =300
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.start()
 	$ready.hide()
+	$AnimatedSprite2D.play()
 
 
 
@@ -16,6 +18,7 @@ func _on_timer_timeout() -> void:
 	if total_time == 0:
 		$ready.show()
 		$Timer.stop()
+		$AnimatedSprite2D.queue_free()
 
 
 func _on_button_2_gui_input(event: InputEvent) -> void:

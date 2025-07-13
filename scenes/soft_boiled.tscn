@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://co3xadjyew04l"]
+[gd_scene load_steps=14 format=3 uid="uid://co3xadjyew04l"]
 
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_p6bkp"]
 [ext_resource type="Script" path="res://scripts/soft_boiled.gd" id="1_qp1hn"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="2_2oumh"]
 [ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_2jhs7"]
 [ext_resource type="Texture2D" uid="uid://dujtrvs14m82r" path="res://artwok/1000000944.png" id="4_kvo0f"]
+[ext_resource type="Texture2D" uid="uid://c0v4qruo3evsk" path="res://artwok/1000000945.png" id="6_5jlw7"]
+[ext_resource type="Texture2D" uid="uid://cwwhcr7dhuv34" path="res://artwok/1000000948.png" id="7_un173"]
+[ext_resource type="Texture2D" uid="uid://nwxq6ac6e75i" path="res://artwok/1000000949.png" id="8_q1mad"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svgof"]
 texture = ExtResource("2_2oumh")
@@ -27,6 +30,29 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 shadow_size = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr2bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5jlw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_un173")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q1mad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_un173")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5jlw7")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 5.0
+}]
 
 [node name="softBoiled" type="Control"]
 layout_mode = 3
@@ -120,6 +146,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g0poi")
 text = "close"
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_2jhs7")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45.125, 80.25)
+scale = Vector2(0.0509033, 0.0437012)
+sprite_frames = SubResource("SpriteFrames_fr2bn")
+animation = &"anim"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]

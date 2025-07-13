@@ -6,6 +6,7 @@ var total_time =480
 func _ready() -> void:
 	$Timer.start()
 	$ready.hide()
+	$AnimatedSprite2D.play()
 
 
 

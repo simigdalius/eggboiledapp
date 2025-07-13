@@ -1,10 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr1uo23obuprn"]
+[gd_scene load_steps=15 format=3 uid="uid://cr1uo23obuprn"]
 
 [ext_resource type="Script" path="res://scripts/jammy_boiled.gd" id="1_mmcjd"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="1_p2m21"]
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="2_x4pu1"]
 [ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_15a7p"]
 [ext_resource type="Texture2D" uid="uid://cdqduo681wtys" path="res://artwok/1000000943.png" id="4_nnpqx"]
+[ext_resource type="Texture2D" uid="uid://c0v4qruo3evsk" path="res://artwok/1000000945.png" id="6_ke0cy"]
+[ext_resource type="Texture2D" uid="uid://cwwhcr7dhuv34" path="res://artwok/1000000948.png" id="7_w5pqa"]
+[ext_resource type="Texture2D" uid="uid://nwxq6ac6e75i" path="res://artwok/1000000949.png" id="8_xvhrt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdbch"]
 texture = ExtResource("1_p2m21")
@@ -35,6 +38,29 @@ shadow_size = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76tsm"]
 texture = ExtResource("4_nnpqx")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w1y35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ke0cy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w5pqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xvhrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w5pqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ke0cy")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 5.0
+}]
 
 [node name="jammy_boiled" type="Control"]
 layout_mode = 3
@@ -120,6 +146,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="ready"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 8.0
 offset_right = 70.0
@@ -127,6 +154,13 @@ offset_bottom = 62.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_76tsm")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_15a7p")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(45.125, 80.25)
+scale = Vector2(0.0509033, 0.0437012)
+sprite_frames = SubResource("SpriteFrames_w1y35")
+animation = &"anim"
 
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cimlbbg5jwano"]
+[gd_scene load_steps=21 format=3 uid="uid://cimlbbg5jwano"]
 
 [ext_resource type="Script" path="res://scripts/chooseboilstyle.gd" id="1_0j8ln"]
 [ext_resource type="FontFile" uid="uid://bydnwb8feerrm" path="res://milky_vintage/MilkyVintage-Regular.ttf" id="1_4fq2h"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3m8nh2x3llax" path="res://scenes/audio_stream_player_2d.tscn" id="4_8rgpj"]
 [ext_resource type="Texture2D" uid="uid://dujtrvs14m82r" path="res://artwok/1000000944.png" id="5_w4exh"]
 [ext_resource type="Texture2D" uid="uid://cdqduo681wtys" path="res://artwok/1000000943.png" id="6_kta8w"]
+[ext_resource type="Texture2D" uid="uid://dgkbsahrj6fg7" path="res://artwok/1000000947.png" id="7_3a1ix"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ug3yn"]
 texture = ExtResource("2_kxbic")
@@ -49,6 +50,11 @@ texture = ExtResource("5_w4exh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_os50o"]
 texture = ExtResource("6_kta8w")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pj71"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dv4qq"]
+texture = ExtResource("7_3a1ix")
 
 [node name="chooseboilstyle" type="Control"]
 layout_mode = 3
@@ -150,14 +156,21 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ctmfu")
 [node name="Button" type="Button" parent="Label2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.381
-anchor_top = -2.187
-anchor_right = 1.238
-anchor_bottom = 0.875
-offset_left = 0.0010004
-offset_top = -0.00799942
-offset_right = 0.0019989
+anchor_top = -1.624
+anchor_right = 0.841
+anchor_bottom = -0.21
+offset_left = -8.0
+offset_top = -9.016
+offset_right = 8.339
+offset_bottom = 17.36
 theme_override_styles/normal = SubResource("StyleBoxTexture_qks77")
+
+[node name="Button85" type="Button" parent="Label2"]
+offset_left = -8.0
+offset_top = -34.0
+offset_right = 26.0
+offset_bottom = 14.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_o4b2l")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -230,11 +243,21 @@ offset_left = -5.0
 offset_top = -35.0
 offset_right = 28.0
 offset_bottom = 14.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6pj71")
+
+[node name="Panel" type="Panel" parent="Label5"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -32.0
+offset_right = 28.0
+offset_bottom = 4.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dv4qq")
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_8rgpj")]
 
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="gui_input" from="Label2/Button" to="." method="_on_button_gui_input"]
+[connection signal="gui_input" from="Label2/Button85" to="." method="_on_button_85_gui_input"]
 [connection signal="gui_input" from="Label3/Button" to="." method="_on_button2_gui_input"]
 [connection signal="gui_input" from="Label4/Button" to="." method="_on_button65_gui_input"]
 [connection signal="gui_input" from="Label5/Button" to="." method="_on_buttonh_gui_input"]
