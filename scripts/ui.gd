@@ -16,4 +16,4 @@ func _on_button_gui_input(event: InputEvent) -> void:
 
 
 func _on_button_2_gui_input(event: InputEvent) -> void:
-	pass # Replace with function body.
+	get_tree().quit()

@@ -6,6 +6,7 @@ func _ready() -> void:
 	$Timer.start()
 	$ready.hide()
 	$AnimatedSprite2D.play()
+	$alarm.stream_paused
 
 
 
@@ -15,6 +16,8 @@ func _on_timer_timeout() -> void:
 	var s = total_time - m * 60
 	$Label.text = '%02d:%02d' % [m,s]
 	if total_time == 0:
+		$AudioStreamPlayer2D.queue_free()
+		$alarm.play()
 		$ready.show()
 		$Timer.stop()
 

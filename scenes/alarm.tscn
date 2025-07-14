@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cumx8tojr1pjm"]
+
+[ext_resource type="AudioStream" uid="uid://b5h4xfwuj6fri" path="res://soundeffects/ring-phone-190265.mp3" id="1_w5hu4"]
+
+[node name="alarm" type="AudioStreamPlayer2D"]
+visible = false
+stream = ExtResource("1_w5hu4")

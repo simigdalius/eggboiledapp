@@ -166,6 +166,7 @@ offset_bottom = 17.36
 theme_override_styles/normal = SubResource("StyleBoxTexture_qks77")
 
 [node name="Button85" type="Button" parent="Label2"]
+layout_mode = 0
 offset_left = -8.0
 offset_top = -34.0
 offset_right = 26.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cr1uo23obuprn"]
+[gd_scene load_steps=16 format=3 uid="uid://cr1uo23obuprn"]
 
 [ext_resource type="Script" path="res://scripts/jammy_boiled.gd" id="1_mmcjd"]
 [ext_resource type="Texture2D" uid="uid://xtvllier1ok1" path="res://milky_vintage/f65e4ac18148befea2370cd3a9bd499b.jpg" id="1_p2m21"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0v4qruo3evsk" path="res://artwok/1000000945.png" id="6_ke0cy"]
 [ext_resource type="Texture2D" uid="uid://cwwhcr7dhuv34" path="res://artwok/1000000948.png" id="7_w5pqa"]
 [ext_resource type="Texture2D" uid="uid://nwxq6ac6e75i" path="res://artwok/1000000949.png" id="8_xvhrt"]
+[ext_resource type="PackedScene" uid="uid://cumx8tojr1pjm" path="res://scenes/alarm.tscn" id="9_c06qc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hdbch"]
 texture = ExtResource("1_p2m21")
@@ -161,6 +162,8 @@ position = Vector2(45.125, 80.25)
 scale = Vector2(0.0509033, 0.0437012)
 sprite_frames = SubResource("SpriteFrames_w1y35")
 animation = &"anim"
+
+[node name="alarm" parent="." instance=ExtResource("9_c06qc")]
 
 [connection signal="gui_input" from="Button2" to="." method="_on_button_2_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -125,6 +125,7 @@ offset_bottom = 106.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oeehg")
 
 [node name="Panel6" type="Panel" parent="."]
+layout_mode = 0
 offset_top = 60.0
 offset_right = 42.0
 offset_bottom = 103.0
